@@ -5,12 +5,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class Service {
 
-    @SerializedName("name")
+    /*@SerializedName("name")
     @Expose
     private String name;
     @SerializedName("imageUrl")
     @Expose
-    private String imageUrl;
+    private String imageUrl;*/
+
+    private String name;
 
     public String getName() {
         return name;
@@ -20,11 +22,11 @@ public class Service {
         this.name = name;
     }
 
-    public String getImageUrl() {
+  /*  public String getImageUrl() {
         return imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
+    }*/
 }

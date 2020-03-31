@@ -19,10 +19,19 @@
             android:id="@+id/toolbarTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="@style/mediumText"
+            android:textAppearance="@style/largeBoldWhiteText"
+            tools:text="@string/app_name"
             android:gravity="center_vertical"
             />
-
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:itemCount="6"
+        tools:listitem="@layout/rv_service_item"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,72 @@
         <item>Bike wash</item>
     </string-array>
 
+    <string-array name="beauty_services">
+        <item>Bridal Make up</item>
+        <item>Party Make up</item>
+        <item>Hair Cut</item>
+        <item>Pedicure</item>
+        <item>Many Cure</item>
+        <item>Mehendi Design</item>
+        <item>Face Wash</item>
+        <item>Body Massage</item>
+        <item>Health Tips</item>
+    </string-array>
+
+    <string-array name="shifting_services">
+        <item>House Shifting</item>
+        <item>Office Shifting</item>
+    </string-array>
+
+    <string-array name="medical_services">
+        <item>Guide line (Local &amp; Foreign)</item>
+        <item>Doctor\'s Appointment (Local &amp; Foreign)</item>
+    </string-array>
+
+    <string-array name="rent_a_car_services">
+        <item>Pick up</item>
+        <item>Micro</item>
+        <item>Bus</item>
+        <item>Truck</item>
+        <item>Mini Bus</item>
+    </string-array>
+
+    <string-array name="event_management">
+        <item>Birthday</item>
+        <item>Marriage Day</item>
+        <item>Political Function</item>
+        <item>Social Function</item>
+        <item>Get together</item>
+        <item>Photography</item>
+        <item>Interior Decoration</item>
+        <item>Painting</item>
+    </string-array>
+
+    <string-array name="it_support">
+        <item>Different types of Management Software</item>
+        <item>Business Software</item>
+        <item>Academic Software</item>
+        <item>IT Tools</item>
+        <item>CC Camera Setting</item>
+        <item>Website Development</item>
+    </string-array>
+
+    <string-array name="home_delivery">
+        <item>Daily Bazaar</item>
+        <item>Medicine (Local &amp; Foreign)</item>
+        <item>Milk</item>
+        <item>Fruits</item>
+        <item>Favorite Foods From Different Areas</item>
+        <item>Cake</item>
+        <item>Dress</item>
+        <item>Ornaments</item>
+        <item>Home Made Food</item>
+    </string-array>
+
+    <string-array name="tuition_service">
+        <item>Tutor</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

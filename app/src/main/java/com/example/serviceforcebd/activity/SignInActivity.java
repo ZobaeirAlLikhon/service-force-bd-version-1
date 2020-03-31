@@ -1,5 +1,6 @@
 package com.example.serviceforcebd.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,11 +12,18 @@ import android.widget.Toast;
 
 import com.example.serviceforcebd.R;
 import com.example.serviceforcebd.databinding.ActivitySignInBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SignInActivity extends AppCompatActivity {
 
     private static final String TAG = "SignInActivity";
     private ActivitySignInBinding binding;
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +57,10 @@ public class SignInActivity extends AppCompatActivity {
         if (password.isEmpty()) {
             binding.passwordET.setError("Field can't be empty!");
             return false;
-        } else if (password.length()<6){
+        } else if (password.length() < 6) {
             binding.passwordET.setError("Password must have at least 6 characters!");
             return false;
-        }else {
+        } else {
             binding.passwordET.setError(null);
             return true;
         }
@@ -63,7 +71,46 @@ public class SignInActivity extends AppCompatActivity {
             return;
         }
 
-        startActivity(new Intent(this, MainActivity.class));
-        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();
+        binding.pleaseWaitLA.setVisibility(View.VISIBLE);
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+
+        String email = binding.emailET.getEditText().getText().toString().trim();
+        String password = binding.passwordET.getEditText().getText().toString().trim();
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                    binding.pleaseWaitLA.setVisibility(View.GONE);
+                } else {
+                    Toast.makeText(SignInActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    binding.pleaseWaitLA.setVisibility(View.GONE);
+                }
+            }
+        });
+
+       /* startActivity(new Intent(this, MainActivity.class));
+        Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show();*/
     }
+
+  /*  @Override
+    protected void onStart() {
+        super.onStart();
+        if (currentUser != null) {
+            sentUserToMainActivity();
+        }
+    }
+
+    private void sentUserToMainActivity() {
+
+        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }*/
 }

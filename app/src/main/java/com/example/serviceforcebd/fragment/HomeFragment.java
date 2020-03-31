@@ -56,19 +56,80 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String service = "Cleaning";
-                Intent intent = new Intent(context, ServicesActivity.class);
-                intent.putExtra("service",service);
-                startActivity(intent);
+                initService(service);
             }
         });
 
         binding.beautyServiceCV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, SignInActivity.class);
-                startActivity(intent);
+                String service = "Beauty Services";
+                initService(service);
             }
         });
+
+        binding.shiftingCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "Shifting";
+                initService(service);
+            }
+        });
+
+        binding.medicalServiceCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "Medical";
+                initService(service);
+            }
+        });
+
+        binding.rentACarCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "Rent-A-Car";
+                initService(service);
+            }
+        });
+
+        binding.eventManagementCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "Event Management";
+                initService(service);
+            }
+        });
+
+        binding.itSupportCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "IT Support";
+                initService(service);
+            }
+        });
+
+        binding.homeDeliveryCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "Home Delivery";
+                initService(service);
+            }
+        });
+
+        binding.tuitionManagementCV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String service = "Tuition Service";
+                initService(service);
+            }
+        });
+    }
+
+    private void initService(String service) {
+        Intent intent = new Intent(context, ServicesActivity.class);
+        intent.putExtra("service",service);
+        startActivity(intent);
+
     }
 
     private ImageListener imageListener = new ImageListener() {

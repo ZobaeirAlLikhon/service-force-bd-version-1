@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,14 +56,15 @@
                     android:id="@+id/cleaningCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:elevation="16dp"
                     android:clickable="true"
+                    android:elevation="16dp"
                     android:focusable="true"
-
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="lollipop">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -78,7 +79,8 @@
                             android:src="@drawable/ic_cleaning"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -97,11 +99,14 @@
                     android:id="@+id/beautyServiceCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="lollipop">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -116,13 +121,14 @@
                             android:src="@drawable/ic_beauty_services"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="ContentDescription" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Beauty Services"
+                            android:text="Beauty"
                             android:textAppearance="@style/smallText"
                             app:layout_constraintEnd_toEndOf="@id/beautyServiceIV"
                             app:layout_constraintStart_toStartOf="@id/beautyServiceIV"
@@ -135,11 +141,15 @@
                     android:id="@+id/shiftingCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -186,11 +196,15 @@
                     android:id="@+id/medicalServiceCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -211,7 +225,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Medical Services"
+                            android:text="Medical"
                             android:textAppearance="@style/smallText"
                             app:layout_constraintEnd_toEndOf="@id/medicalServiceIV"
                             app:layout_constraintStart_toStartOf="@id/medicalServiceIV"
@@ -224,11 +238,15 @@
                     android:id="@+id/rentACarCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -262,12 +280,15 @@
                     android:id="@+id/eventManagementCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -310,11 +331,15 @@
                     android:id="@+id/itSupportCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -348,11 +373,15 @@
                     android:id="@+id/homeDeliveryCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -386,12 +415,15 @@
                     android:id="@+id/tuitionManagementCV"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="2dp"
+                    android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:elevation="16dp"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     app:cardCornerRadius="10dp"
-
-                    app:cardElevation="16dp">
+                    app:cardElevation="16dp"
+                    tools:targetApi="LOLLIPOP">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -413,7 +445,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Tuition Service"
+                            android:text="Tutor"
                             android:textAppearance="@style/smallText"
                             app:layout_constraintEnd_toEndOf="@id/tuitionManagementIV"
                             app:layout_constraintStart_toStartOf="@id/tuitionManagementIV"

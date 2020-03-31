@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "933889880419",
+    "firebase_url": "https://serviceforcebd-a9254.firebaseio.com",
+    "project_id": "serviceforcebd-a9254",
+    "storage_bucket": "serviceforcebd-a9254.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933889880419:android:8c62b9ba5e39ee04a5a356",
+        "android_client_info": {
+          "package_name": "com.example.serviceforcebd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933889880419-mgv4agg581h1f6dgrgj54bikfnh58rca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmXRN6KniTvYznTyen51etp5mafPGp2I0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "933889880419-mgv4agg581h1f6dgrgj54bikfnh58rca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
