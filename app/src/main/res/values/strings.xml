@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">ServiceForceBD</string>
+
+    <string-array name="cleaning_services">
+        <item>Around the Resident</item>
+        <item>Gate</item>
+        <item>Stairs</item>
+        <item>Store Room</item>
+        <item>Living Room</item>
+        <item>Mats</item>
+        <item>Kitchen</item>
+        <item>Floor</item>
+        <item>Furniture</item>
+        <item>Ceiling</item>
+        <item>Electronics &amp; Electric Tools</item>
+        <item>Water Tank</item>
+        <item>Pipe Line</item>
+        <item>Car wash</item>
+        <item>Bike wash</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
