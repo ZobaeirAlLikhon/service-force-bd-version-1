@@ -198,7 +198,7 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/pleaseWaitLA"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
             android:visibility="gone"
             android:background="@color/white"
@@ -206,10 +206,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_fileName="please_wait_anim.json"
+            app:lottie_fileName="please_wait_anim_two.json"
             app:lottie_loop="true"
             app:lottie_autoPlay="true"
-            tools:visibility="visible" />
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

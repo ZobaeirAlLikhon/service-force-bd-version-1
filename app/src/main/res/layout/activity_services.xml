@@ -19,7 +19,7 @@
             android:id="@+id/toolbarTV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="@style/largeBoldWhiteText"
+            android:textAppearance="@style/monospaceLargeBoldWhiteText"
             tools:text="@string/app_name"
             android:gravity="center_vertical"
             />

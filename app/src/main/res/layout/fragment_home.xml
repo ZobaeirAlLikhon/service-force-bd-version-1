@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:padding="8dp"
                 android:text="Services"
-                android:textAppearance="@style/largeText"
+                android:textAppearance="@style/largeTextSansSerif"
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -87,7 +87,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Cleaning"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/cleaningIV"
                             app:layout_constraintStart_toStartOf="@id/cleaningIV"
                             app:layout_constraintTop_toBottomOf="@+id/cleaningIV" />
@@ -129,7 +129,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Beauty"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/beautyServiceIV"
                             app:layout_constraintStart_toStartOf="@id/beautyServiceIV"
                             app:layout_constraintTop_toBottomOf="@+id/beautyServiceIV" />
@@ -171,7 +171,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Shifting"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/shiftingIV"
                             app:layout_constraintStart_toStartOf="@id/shiftingIV"
                             app:layout_constraintTop_toBottomOf="@+id/shiftingIV" />
@@ -226,7 +226,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Medical"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/medicalServiceIV"
                             app:layout_constraintStart_toStartOf="@id/medicalServiceIV"
                             app:layout_constraintTop_toBottomOf="@+id/medicalServiceIV" />
@@ -268,7 +268,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Rent A Car"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/rentACarIV"
                             app:layout_constraintStart_toStartOf="@id/rentACarIV"
                             app:layout_constraintTop_toBottomOf="@+id/rentACarIV" />
@@ -311,7 +311,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Event Management"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/eventManagementIV"
                             app:layout_constraintStart_toStartOf="@id/eventManagementIV"
                             app:layout_constraintTop_toBottomOf="@+id/eventManagementIV" />
@@ -361,7 +361,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="IT Support"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/itSupportIV"
                             app:layout_constraintStart_toStartOf="@id/itSupportIV"
                             app:layout_constraintTop_toBottomOf="@+id/itSupportIV" />
@@ -403,7 +403,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Home Delivery"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/homeDeliveryIV"
                             app:layout_constraintStart_toStartOf="@id/homeDeliveryIV"
                             app:layout_constraintTop_toBottomOf="@+id/homeDeliveryIV" />
@@ -446,7 +446,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Tutor"
-                            android:textAppearance="@style/smallText"
+                            android:textAppearance="@style/monospaceSmallText"
                             app:layout_constraintEnd_toEndOf="@id/tuitionManagementIV"
                             app:layout_constraintStart_toStartOf="@id/tuitionManagementIV"
                             app:layout_constraintTop_toBottomOf="@+id/tuitionManagementIV" />
