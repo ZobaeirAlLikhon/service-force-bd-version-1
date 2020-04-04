@@ -33,12 +33,14 @@
             app:endIconMode="clear_text"
             app:errorEnabled="true">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
                 android:imeOptions="actionNext"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:lines="1"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,8 +53,7 @@
             app:errorEnabled="true"
             app:passwordToggleEnabled="true">
 
-            <com.google.android.material.textfield.TextInputEditText
-
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -120,9 +121,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_fileName="please_wait_anim_two.json"
-        app:lottie_loop="true"
         app:lottie_autoPlay="true"
-        />
+        app:lottie_fileName="please_wait_anim_two.json"
+        app:lottie_loop="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

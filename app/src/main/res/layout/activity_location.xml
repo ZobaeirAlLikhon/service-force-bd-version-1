@@ -32,7 +32,7 @@
                 android:id="@+id/toolbarTV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textAppearance="@style/monospaceLargeBoldWhiteText"
+                android:textAppearance="@style/monospaceMediumBoldWhiteText"
                 tools:text="@string/app_name"
                 android:gravity="center_vertical"
                 android:layout_toEndOf="@+id/backBtn"
@@ -46,15 +46,35 @@
         android:id="@+id/currentAddressTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
         android:padding="8dp"
         android:clickable="true"
         android:focusable="true"
+        android:background="?attr/selectableItemBackground"
         android:textAppearance="@style/monospaceMediumText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:text="@tools:sample/cities" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/viewColor"
+        />
+    <TextView
+        android:id="@+id/customAddressTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
+        android:padding="8dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:textAppearance="@style/monospaceMediumText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+       android:text="Custom Address" />
+
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

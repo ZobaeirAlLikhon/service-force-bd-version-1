@@ -1,6 +1,7 @@
 package com.example.serviceforcebd.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -30,6 +31,7 @@ public class LocationActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int LOCATION_REQUEST_CODE = 1001;
     private ActivityLocationBinding binding;
+    private String address;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -38,6 +40,13 @@ public class LocationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLocationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+
+        binding.customAddressTV.setOnClickListener(view -> {
+            Intent intent = new Intent(this, AddressActivity.class);
+            startActivity(intent);
+        });
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
@@ -61,6 +70,12 @@ public class LocationActivity extends AppCompatActivity {
         } else {
             askLocationPermission();
         }
+
+        binding.currentAddressTV.setOnClickListener(view -> {
+            Intent intent = new Intent(this, AddressActivity.class);
+            intent.putExtra("address", address);
+            startActivity(intent);
+        });
     }
 
     private void getLastLocation() {
@@ -78,7 +93,7 @@ public class LocationActivity extends AppCompatActivity {
                     Log.d(TAG, "onSuccess: Longitude: " + location.getLongitude());
                     Log.d(TAG, "onSuccess: Time: " + location.getTime());
 
-                    String address = getCompleteAddressString(location.getLatitude(), location.getLongitude());
+                    address = getCompleteAddressString(location.getLatitude(), location.getLongitude());
                     Log.d(TAG, "onSuccess: Address : " + address);
                     binding.currentAddressTV.setText(address);
 

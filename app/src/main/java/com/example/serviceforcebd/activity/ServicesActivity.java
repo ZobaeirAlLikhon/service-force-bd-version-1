@@ -27,6 +27,10 @@ public class ServicesActivity extends AppCompatActivity {
         binding = ActivityServicesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.backBtn.setOnClickListener(view -> {
+            onBackPressed();
+        });
+
 
 
         Bundle bundle = getIntent().getExtras();
