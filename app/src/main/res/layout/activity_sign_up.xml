@@ -8,8 +8,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
@@ -38,9 +38,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textCapWords"
                 android:imeOptions="actionNext"
-                />
+                android:inputType="textCapWords|text"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -61,10 +61,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
                 android:imeOptions="actionNext"
-                />
+                android:inputType="textEmailAddress|text"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/phoneET"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -83,9 +84,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="phone"
                 android:imeOptions="actionNext"
-                />
+                android:inputType="phone|text"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -101,14 +102,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneET"
+            app:counterEnabled="true"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:imeOptions="actionNext"
-                />
+                android:inputType="textPassword|text"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -121,6 +123,7 @@
             android:layout_marginEnd="8dp"
             android:hint="Confirm Password"
             app:errorEnabled="true"
+            app:counterEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordET"
@@ -129,9 +132,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:imeOptions="actionDone"
-                />
+                android:inputType="textPassword|text"
+                android:maxLines="1" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.cardview.widget.CardView
@@ -200,16 +203,15 @@
             android:id="@+id/pleaseWaitLA"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:visibility="gone"
             android:background="@color/white"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:lottie_fileName="please_wait_anim_two.json"
-            app:lottie_loop="true"
             app:lottie_autoPlay="true"
-            />
+            app:lottie_fileName="please_wait_anim_two.json"
+            app:lottie_loop="true" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

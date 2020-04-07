@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import android.widget.ImageView;
 
 import com.example.serviceforcebd.R;
 import com.example.serviceforcebd.activity.ServicesActivity;
-import com.example.serviceforcebd.activity.SignInActivity;
 import com.example.serviceforcebd.databinding.FragmentHomeBinding;
 import com.synnapps.carouselview.ImageListener;
 
@@ -26,7 +24,7 @@ import com.synnapps.carouselview.ImageListener;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private int[] sampleImages = {R.drawable.image_1, R.drawable.image_2, R.drawable.image_3};
+    private int[] sampleImages = {R.drawable.image_1, R.drawable.image_2};
     private Context context;
 
     public HomeFragment() {
@@ -44,85 +42,66 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false);
+        initView();
         init();
+
         return binding.getRoot();
+    }
+
+    private void initView() {
+
+        binding.cleaningCV.setOnClickListener(view -> {
+            String service = "Cleaning";
+            initService(service);
+        });
+
+        binding.beautyServiceCV.setOnClickListener(view -> {
+            String service = "Beauty Services";
+            initService(service);
+        });
+
+        binding.shiftingCV.setOnClickListener(view -> {
+            String service = "Shifting";
+            initService(service);
+        });
+
+        binding.medicalServiceCV.setOnClickListener(view -> {
+            String service = "Medical";
+            initService(service);
+        });
+
+        binding.rentACarCV.setOnClickListener(view -> {
+            String service = "Rent-A-Car";
+            initService(service);
+        });
+
+        binding.eventManagementCV.setOnClickListener(view -> {
+            String service = "Event Management";
+            initService(service);
+        });
+
+        binding.itSupportCV.setOnClickListener(view -> {
+            String service = "IT Support";
+            initService(service);
+        });
+
+        binding.homeDeliveryCV.setOnClickListener(view -> {
+            String service = "Home Delivery";
+            initService(service);
+        });
+
+        binding.tuitionManagementCV.setOnClickListener(view -> {
+            String service = "Tuition Service";
+            initService(service);
+        });
+
     }
 
     private void init() {
         binding.carouselView.setPageCount(sampleImages.length);
         binding.carouselView.setImageListener(imageListener);
 
-        binding.cleaningCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Cleaning";
-                initService(service);
-            }
-        });
 
-        binding.beautyServiceCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Beauty Services";
-                initService(service);
-            }
-        });
-
-        binding.shiftingCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Shifting";
-                initService(service);
-            }
-        });
-
-        binding.medicalServiceCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Medical";
-                initService(service);
-            }
-        });
-
-        binding.rentACarCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Rent-A-Car";
-                initService(service);
-            }
-        });
-
-        binding.eventManagementCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Event Management";
-                initService(service);
-            }
-        });
-
-        binding.itSupportCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "IT Support";
-                initService(service);
-            }
-        });
-
-        binding.homeDeliveryCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Home Delivery";
-                initService(service);
-            }
-        });
-
-        binding.tuitionManagementCV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String service = "Tuition Service";
-                initService(service);
-            }
-        });
     }
 
     private void initService(String service) {

@@ -32,6 +32,7 @@ public class LocationActivity extends AppCompatActivity {
     private static final int LOCATION_REQUEST_CODE = 1001;
     private ActivityLocationBinding binding;
     private String address;
+    private String category;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -42,19 +43,22 @@ public class LocationActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle != null){
+            category = bundle.getString("category");
+            binding.toolbarTV.setText(category);
+        }
 
         binding.customAddressTV.setOnClickListener(view -> {
             Intent intent = new Intent(this, AddressActivity.class);
+            intent.putExtra("orderItem",category);
             startActivity(intent);
         });
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
-        Bundle bundle = getIntent().getExtras();
 
-        if (bundle != null){
-            binding.toolbarTV.setText(bundle.getString("category"));
-        }
 
         binding.backBtn.setOnClickListener(view -> {
             onBackPressed();
@@ -74,6 +78,7 @@ public class LocationActivity extends AppCompatActivity {
         binding.currentAddressTV.setOnClickListener(view -> {
             Intent intent = new Intent(this, AddressActivity.class);
             intent.putExtra("address", address);
+            intent.putExtra("orderItem", category);
             startActivity(intent);
         });
     }
@@ -159,7 +164,7 @@ public class LocationActivity extends AppCompatActivity {
                 StringBuilder strReturnedAddress = new StringBuilder("");
 
                 for (int i = 0; i <= returnedAddress.getMaxAddressLineIndex(); i++) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+                    strReturnedAddress.append(returnedAddress.getAddressLine(i));
                 }
                 strAdd = strReturnedAddress.toString();
                 //Log.w("My Current loction address", strReturnedAddress.toString());
