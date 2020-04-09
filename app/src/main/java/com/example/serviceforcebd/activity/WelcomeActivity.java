@@ -36,9 +36,8 @@ public class WelcomeActivity extends AppCompatActivity {
                 startActivity(mainIntent);
                 finish();
 
-                lottieAnimationView.setVisibility(View.GONE);
             }
-        }, 5000);
+        }, 7000);
     }
 
 }
