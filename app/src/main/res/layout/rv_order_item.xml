@@ -11,14 +11,25 @@
         >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/productNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:textAppearance="@style/monospaceMediumText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@tools:sample/cities" />
+            tools:text="Product Name" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textAppearance="@style/monospaceMediumText"
+            app:layout_constraintStart_toStartOf="@id/productNameTV"
+           app:layout_constraintTop_toBottomOf="@id/productNameTV"
+            tools:text="@tools:sample/date/ddmmyy" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
