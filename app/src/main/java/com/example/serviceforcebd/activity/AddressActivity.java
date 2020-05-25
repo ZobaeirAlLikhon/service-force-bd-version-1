@@ -5,19 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.serviceforcebd.databinding.ActivityAddressBinding;
 import com.example.serviceforcebd.model.Order;
 import com.example.serviceforcebd.model.User;
 import com.example.serviceforcebd.util.SDF;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -69,9 +68,7 @@ public class AddressActivity extends AppCompatActivity {
 
     private void initFireBaseOrderPlace() {
         Log.d(TAG, "initFireBaseOrderPlace: started");
-
-        binding.orderPlacedLV.setVisibility(View.VISIBLE);
-
+        binding.progressBarId.setVisibility(View.VISIBLE);
         String currentUserId = firebaseUser.getUid();
         DatabaseReference orderRef = databaseReference.child("orders");
 
@@ -82,30 +79,25 @@ public class AddressActivity extends AppCompatActivity {
         String orderItem = bundle.getString("orderItem");
         String date = binding.dateET.getEditText().getText().toString();
         String time = binding.timeET.getEditText().getText().toString();
-        boolean isPlaced = false;
+        String isPlaced = "Placed";
 
 
         Order order = new Order(userId, name, address, contact, orderItem, date, time, isPlaced);
         String pushId = orderRef.push().getKey();
         order.setOrderId(pushId);
-        orderRef.child("allOrders").child(pushId).setValue(order).addOnCompleteListener(task -> {
+        orderRef.child("Admin").child("newOrder").child(pushId).setValue(order).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 orderRef.child("orderByUser").child(userId).child(pushId).setValue(order).addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()){
-
-                        binding.orderPlacedLV.setVisibility(View.GONE);
-                        binding.orderDoneRV.setVisibility(View.VISIBLE);
-                        binding.orderDoneRV.postDelayed(new Runnable() {
-                            public void run() {
-                                binding.orderDoneRV.setVisibility(View.GONE);
-                                Log.d(TAG, "run: started");
-                            }
-                        }, 2000);
+                        Toast.makeText(this, "Your order Placed!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this,MainActivity.class));
+                        binding.progressBarId.setVisibility(View.GONE);
                     }
 
                 });
             } else {
-                binding.orderPlacedLV.setVisibility(View.GONE);
+                Toast.makeText(this, "Please order again!", Toast.LENGTH_SHORT).show();
+                binding.progressBarId.setVisibility(View.GONE);
             }
         });
 

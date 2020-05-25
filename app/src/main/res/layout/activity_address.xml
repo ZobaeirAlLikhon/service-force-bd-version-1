@@ -176,51 +176,16 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/orderPlacedLV"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_fileName="order_placed.json"
-        app:lottie_loop="true"
-        android:background="@color/primaryLightColor"
-        android:visibility="gone"
-        app:lottie_autoPlay="true"
-        />
-
-    <RelativeLayout
-        android:id="@+id/orderDoneRV"
+    <ProgressBar
+        android:id="@+id/progressBarId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
         android:visibility="gone"
-        >
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/orderDoneLV"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            app:lottie_fileName="order_done.json"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/orderDoneLV"
-            android:text="Your Order Placed.\n We will contact you soon!"
-            android:gravity="center"
-            android:layout_margin="8dp"
-            android:textAppearance="@style/monospaceMediumBoldWhiteText"
-            />
-    </RelativeLayout>
-
-
-
+        tools:visibility="visible"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,14 +9,14 @@ public class Order {
     private String orderDate;
     private String orderTime;
     private String orderId;
-    private boolean isPlaced;
-
-
+    private String isPlaced;
+    private String timeStamp;
 
     public Order() {
     }
 
-    public Order(String userId, String userName, String userAddress, String userContact, String orderItem, String orderDate, String orderTime, boolean isPlaced) {
+    public Order(String userId, String userName, String userAddress, String userContact,
+                 String orderItem, String orderDate, String orderTime, String isPlaced) {
         this.userId = userId;
         this.userName = userName;
         this.userAddress = userAddress;
@@ -28,8 +28,8 @@ public class Order {
     }
 
     public Order(String userId, String userName, String userAddress,
-                 String userContact, String orderItem,
-                 String orderDate, String orderTime, String orderId, boolean isPlaced) {
+                 String userContact, String orderItem, String orderDate,
+                 String orderTime, String orderId, String isPlaced) {
         this.userId = userId;
         this.userName = userName;
         this.userAddress = userAddress;
@@ -40,6 +40,24 @@ public class Order {
         this.orderId = orderId;
         this.isPlaced = isPlaced;
     }
+
+    public String getIsPlaced() {
+        return isPlaced;
+    }
+
+    public void setIsPlaced(String isPlaced) {
+        this.isPlaced = isPlaced;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+
 
     public String getUserId() {
         return userId;
@@ -105,11 +123,11 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public boolean isPlaced() {
+    public String isPlaced() {
         return isPlaced;
     }
 
-    public void setPlaced(boolean placed) {
+    public void setPlaced(String placed) {
         isPlaced = placed;
     }
     @Override
