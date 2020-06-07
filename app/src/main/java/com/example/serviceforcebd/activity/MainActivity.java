@@ -7,11 +7,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.serviceforcebd.R;
 import com.example.serviceforcebd.databinding.ActivityMainBinding;
@@ -75,8 +78,28 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.chatBN:
-                        selectedFragment = new ChatFragment();
-                        initFragment(selectedFragment);
+                        /*selectedFragment = new ChatFragment();
+                        initFragment(selectedFragment);*/
+
+                       /* Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://messaging/" + "313356632862434"));
+                        startActivity(i);*/
+
+                        /*Intent intent;
+                        intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.messenger.com/t/{313356632862434}"));
+                        startActivity(intent);*/
+
+                        String messengerUrl ;
+                        if (isMessengerAppInstalled()) {
+                            Toast.makeText(MainActivity.this, "messenger is installed , open app bubble", Toast.LENGTH_SHORT).show();
+                            messengerUrl = "fb-messenger://user/313356632862434/";
+                        } else {
+                            Toast.makeText(MainActivity.this, "messenger is not installed , open messenger in browser", Toast.LENGTH_SHORT).show();
+                            messengerUrl = "https://www.messenger.com/t/313356632862434/";
+                        }
+                        Intent messengerIntent = new Intent(Intent.ACTION_VIEW);
+                        messengerIntent.setData(Uri.parse(messengerUrl));
+                        startActivity(messengerIntent);
+
                         break;
 
                     case R.id.moreBN:
@@ -119,5 +142,14 @@ public class MainActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
+    }
+
+    public boolean isMessengerAppInstalled() {
+        try {
+            getApplicationContext().getPackageManager().getApplicationInfo("com.facebook.orca", 0);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }
