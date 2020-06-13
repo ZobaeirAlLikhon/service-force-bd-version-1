@@ -10,11 +10,13 @@ import android.view.WindowManager;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.example.serviceforcebd.R;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class WelcomeActivity extends AppCompatActivity {
 
     private int progress;
     private LottieAnimationView lottieAnimationView;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         lottieAnimationView = findViewById(R.id.servicesAnimLV);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
         new Handler().postDelayed(new Runnable() {
