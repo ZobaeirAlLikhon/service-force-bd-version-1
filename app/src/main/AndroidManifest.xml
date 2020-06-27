@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.serviceforcebd">
+    package="com.sfbd.serviceforcebd">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -11,18 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.WelcomeActivity">
+        <activity android:name="com.sfbd.serviceforcebd.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AddressActivity" />
-        <activity android:name=".activity.LocationActivity" />
-        <activity android:name=".activity.SignInActivity" />
-        <activity android:name=".activity.SignUpActivity" />
-        <activity android:name=".activity.ServicesActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.sfbd.serviceforcebd.activity.AddressActivity" />
+        <activity android:name="com.sfbd.serviceforcebd.activity.LocationActivity" />
+        <activity android:name="com.sfbd.serviceforcebd.activity.SignInActivity" />
+        <activity android:name="com.sfbd.serviceforcebd.activity.SignUpActivity" />
+        <activity android:name="com.sfbd.serviceforcebd.activity.ServicesActivity" />
+        <activity android:name="com.sfbd.serviceforcebd.activity.MainActivity">
 
         </activity>
 
